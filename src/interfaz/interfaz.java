@@ -159,7 +159,7 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ModeloActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+       insertar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1TipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1TipoActionPerformed
@@ -222,4 +222,22 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1Modelo;
     private javax.swing.JTextField jTextField1Tipo;
     // End of variables declaration//GEN-END:variables
+
+    private void insertar() {
+         // Obtener los valores de las cajas de texto
+    String marca = jTextField1Marca.getText();
+    String modelo = jTextField1Modelo.getText();
+    String tipo = jTextField1Tipo.getText();
+
+    // Concatenar los valores en una cadena
+    String texto = "Marca: " + marca + "-"+ "Modelo: " + modelo + "-" +"Tipo: " + tipo + "\n";
+
+    // Agregar el texto al JTextArea
+    jTextArea1.append(texto);
+
+    // Restablecer los valores de las cajas de texto después de la inserción (opcional)
+    jTextField1Marca.setText("");
+    jTextField1Modelo.setText("");
+    jTextField1Tipo.setText("");
 }
+    }
