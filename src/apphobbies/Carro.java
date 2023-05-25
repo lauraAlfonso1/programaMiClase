@@ -4,20 +4,26 @@
  */
 package apphobbies;
 
-import java.util.List;
+
 
 /**
  *
  * @author laura
  */
 public class Carro {
-    private String marca;
-    private int modelo;
+   private String marca;
+    private String modelo;
     private String tipo;
 
-    public Carro(String marca, int modelo, String tipo) {
+    public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
@@ -25,23 +31,11 @@ public class Carro {
         return marca;
     }
 
-    public int getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
     public String getTipo() {
         return tipo;
-    }
-        public static void ordenarBurbuja(List<Carro> carros) {
-        int n = carros.size();
-        for (int i = 0; i < n-1; i++) {
-            for (int j = 0; j < n-i-1; j++) {
-                if (carros.get(j).getModelo() > carros.get(j+1).getModelo()) {
-                    Carro temp = carros.get(j);
-                    carros.set(j, carros.get(j+1));
-                    carros.set(j+1, temp);
-                }
-            }
-        }
     }
 }

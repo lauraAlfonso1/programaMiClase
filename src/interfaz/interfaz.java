@@ -4,6 +4,8 @@
  */
 package interfaz;
 
+import apphobbies.Carro;
+
 /**
  *
  * @author laura
@@ -224,20 +226,28 @@ public class interfaz extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void insertar() {
-         // Obtener los valores de las cajas de texto
+     Carro carro = new Carro();
+
+    // Obtener los valores de las cajas de texto
     String marca = jTextField1Marca.getText();
     String modelo = jTextField1Modelo.getText();
     String tipo = jTextField1Tipo.getText();
 
-    // Concatenar los valores en una cadena
-    String texto = "Marca: " + marca + "-"+ "Modelo: " + modelo + "-" +"Tipo: " + tipo + "\n";
+    // Establecer los valores en la instancia de Carro
+    carro.setMarca(marca);
+    carro.setModelo(" ");
+    carro.setTipo(tipo);
 
-    // Agregar el texto al JTextArea
+    // Agregar los valores al JTextArea
+    String texto = "Marca: " + carro.getMarca() + "\n"
+                 + "Modelo: " + carro.getModelo() + "\n"
+                 + "Tipo: " + carro.getTipo() + "\n";
+
     jTextArea1.append(texto);
 
-    // Restablecer los valores de las cajas de texto después de la inserción (opcional)
+    // Restablecer los valores de las cajas de texto (opcional)
     jTextField1Marca.setText("");
     jTextField1Modelo.setText("");
     jTextField1Tipo.setText("");
 }
-    }
+}
